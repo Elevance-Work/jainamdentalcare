@@ -6,16 +6,16 @@ export default function Section1() {
     const [snackbar, setSnackbar] = useState({ show: false, message: "", type: "" });
     const [loading, setLoading] = useState(false);
 
-    const showSnackbar = (message, type = "success") => {
+const showSnackbar = (message: string, type: string = "success") => {
         setSnackbar({ show: true, message, type });
         setTimeout(() => setSnackbar({ show: false, message: "", type: "" }), 4000);
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
-        const formData = new FormData(e.target);
+        const formData = new FormData(e.target as HTMLFormElement);
         formData.append("_captcha", "false");
         formData.append("_template", "table");
         formData.append("_subject", "New Appointment Request - Jainam Dental Care");
@@ -31,7 +31,7 @@ export default function Section1() {
 
             if (result.success === "true" || result.success === true) {
                 showSnackbar("✅ Thank you! Your message was sent successfully.", "success");
-                e.target.reset();
+                (e.target as HTMLFormElement).reset();
             } else {
                 showSnackbar("❌ Something went wrong. Please try again.", "error");
             }
