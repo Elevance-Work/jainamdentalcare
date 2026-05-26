@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Section1() {
-    const [snackbar, setSnackbar] = useState({ show: false, message: "", type: "" });
+    const [snackbar, setSnackbar] = useState<{ show: boolean; message: string; type: string }>({ show: false, message: "", type: "" });
     const [loading, setLoading] = useState(false);
 
-const showSnackbar = (message: string, type: string = "success") => {
+    const showSnackbar = (message: string, type: string = "success") => {
         setSnackbar({ show: true, message, type });
         setTimeout(() => setSnackbar({ show: false, message: "", type: "" }), 4000);
     };
@@ -15,7 +15,8 @@ const showSnackbar = (message: string, type: string = "success") => {
         e.preventDefault();
         setLoading(true);
 
-        const formData = new FormData(e.target as HTMLFormElement);
+        const form = e.target as HTMLFormElement;
+        const formData = new FormData(form);
         formData.append("_captcha", "false");
         formData.append("_template", "table");
         formData.append("_subject", "New Appointment Request - Jainam Dental Care");
@@ -27,11 +28,16 @@ const showSnackbar = (message: string, type: string = "success") => {
                 body: formData,
             });
 
+            if (!response.ok) {
+                showSnackbar("❌ Something went wrong. Please try again.", "error");
+                return;
+            }
+
             const result = await response.json();
 
             if (result.success === "true" || result.success === true) {
                 showSnackbar("✅ Thank you! Your message was sent successfully.", "success");
-                (e.target as HTMLFormElement).reset();
+                form.reset();
             } else {
                 showSnackbar("❌ Something went wrong. Please try again.", "error");
             }
@@ -87,7 +93,7 @@ const showSnackbar = (message: string, type: string = "success") => {
                                             <div className="col-lg-6">
                                                 <input
                                                     className="mb-20"
-                                                    type="number"
+                                                    type="tel"
                                                     name="phone_number"
                                                     placeholder="Phone Number"
                                                     required
@@ -120,7 +126,6 @@ const showSnackbar = (message: string, type: string = "success") => {
                                                     className="mb-20 nice-select wide vl-service-select-iner"
                                                     type="text"
                                                     name="doctor"
-                                                    placeholder="Service"
                                                     value="Dr. Akshay Jain"
                                                     readOnly
                                                 />
@@ -130,7 +135,6 @@ const showSnackbar = (message: string, type: string = "success") => {
                                                     className="mb-20"
                                                     type="date"
                                                     name="appointment_date"
-                                                    placeholder="Date"
                                                     required
                                                 />
                                             </div>
@@ -148,7 +152,10 @@ const showSnackbar = (message: string, type: string = "success") => {
                                                         type="submit"
                                                         className="vl-btn-primary"
                                                         disabled={loading}
-                                                        style={{ opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}
+                                                        style={{
+                                                            opacity: loading ? 0.7 : 1,
+                                                            cursor: loading ? "not-allowed" : "pointer"
+                                                        }}
                                                     >
                                                         {loading ? "Sending..." : "Book An Appoinment"}
                                                     </button>
