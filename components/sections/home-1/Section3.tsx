@@ -158,14 +158,14 @@ export default function Section3() {
                 </div>
               </SwiperSlide>
             </Swiper>
-            <div className="owl-nav">
+            {/* <div className="owl-nav">
               <button className="owl-prev">
                 <i className="fa-solid fa-arrow-left" />
               </button>
               <button className="owl-next">
                 <i className="fa-solid fa-arrow-right" />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

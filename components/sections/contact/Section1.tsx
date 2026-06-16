@@ -22,7 +22,7 @@ export default function Section1() {
         formData.append("_subject", "New Appointment Request - Jainam Dental Care");
 
         try {
-            const response = await fetch("https://formsubmit.co/ajax/chetansinghal21@gmail.com", {
+            const response = await fetch("https://formsubmit.co/ajax/akshayjain21100@gmail.com", {
                 method: "POST",
                 headers: { Accept: "application/json" },
                 body: formData,
@@ -82,23 +82,10 @@ export default function Section1() {
                                     <div className="vl-conatct-iner-form">
                                         <div className="row">
                                             <div className="col-lg-6">
-                                                <input
-                                                    className="mb-20"
-                                                    type="text"
-                                                    name="first_name"
-                                                    placeholder="First Name"
-                                                    required
-                                                />
+                                                <input className="mb-20" type="text" name="first_name" placeholder="First Name" required/>
                                             </div>
                                             <div className="col-lg-6">
-                                                <input
-                                                    className="mb-20"
-                                                    type="tel"
-                                                    name="phone_number"
-                                                    placeholder="Phone Number"
-                                                    required
-                                                />
-                                            </div>
+                                                <input className="mb-20"  type="tel" name="phone_number" placeholder="Phone Number" required />                                            </div>
                                             <div className="col-lg-6">
                                                 <input
                                                     className="mb-20"

@@ -11,7 +11,7 @@ export default function Footer() {
                             <div className="vl-footer-widget-1">
                                 <div className="vl-footer-logo">
                                     <Link href="/">
-                                        <img src="assets/img/logo/vl-footer-logo-1.1.png" alt="" />
+                                        <img src="assets/img/logo/jainam1.1.png" alt="" />
                                     </Link>
                                 </div>
                                 <div className="vl-footer-content">
@@ -142,7 +142,7 @@ export default function Footer() {
                     <div className="vl-footer-copyright-text">
                         <div className="row align-items-center">
                             <div className="col-lg-6 col-md-6">
-                                <p className="para">© 2026 Dentalx ,Inc. All Rights Reserved.</p>
+                                <p className="para">© 2026 Jainam Dental Care ,Inc. All Rights Reserved.</p>
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 {/* <div className="copy-right-menu">
