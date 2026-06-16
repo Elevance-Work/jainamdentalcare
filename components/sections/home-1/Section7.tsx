@@ -9,13 +9,13 @@ export default function Section7() {
           <div className="row">
             <div className="col-lg-6 mb-30">
               <div className="vl-contact-text-wraper-1">
-                <div className="vl-section-title mb-32">
+                {/* <div className="vl-section-title mb-32">
                   <h5 className="subtitle" data-aos="fade-up" data-aos-duration={800} data-aos-delay={300}>
                     Contact Us
                   </h5>
                   <h2 className="title pt-16 text-anime-style-3">Book Your Appointment</h2>
-                </div>
-                <div className="vl-contact-form" data-aos="fade-right" data-aos-duration={800} data-aos-delay={300}>
+                </div> */}
+                {/* <div className="vl-contact-form" data-aos="fade-right" data-aos-duration={800} data-aos-delay={300}>
                   <form action="#">
                     <div className="row">
                       <div className="col-lg-6 mb-24">
@@ -44,7 +44,7 @@ export default function Section7() {
                       <button className="vl-btn-primary">Submit</button>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-lg-6 mb-30" data-aos="fade-left" data-aos-duration={800} data-aos-delay={300}>

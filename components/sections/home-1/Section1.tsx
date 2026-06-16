@@ -4,10 +4,10 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "@/node_modules/react-modal-video/css/modal-video.css";
 import ModalVideo from "react-modal-video";
 import { useState } from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/autoplay";
 import Link from "next/link";
 const swiperOptions = {
   modules: [Autoplay, Pagination, Navigation],
@@ -100,7 +100,6 @@ export default function Section1() {
                       <p className="para pb-32">
                         Our dedicated team of professionals is committed to delivering <br /> personalized, high-quality dental care a comfortable &amp; friendly.
                       </p>
-                      {/* btn */}
                       <div className="vl-hero-btn" data-aos="fade-up" data-aos-duration={800} data-aos-delay={300}>
                         <Link href="/contact" className="vl-btn-primary">
                           Book An Appoinment
